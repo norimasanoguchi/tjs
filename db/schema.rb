@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_27_112108) do
+ActiveRecord::Schema.define(version: 2019_08_27_221817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,9 +40,19 @@ ActiveRecord::Schema.define(version: 2019_08_27_112108) do
     t.bigint "prefecture_id"
     t.integer "edu_level", null: false
     t.integer "japanese_level", null: false
+    t.string "remember_me_token"
+    t.datetime "remember_me_token_expires_at"
+    t.string "crypted_password"
+    t.string "salt"
+    t.string "reset_password_token"
+    t.datetime "reset_password_token_expires_at"
+    t.datetime "reset_password_email_sent_at"
+    t.integer "access_count_to_reset_password_page", default: 0
     t.index ["country_id"], name: "index_talents_on_country_id"
     t.index ["email"], name: "index_talents_on_email", unique: true
     t.index ["prefecture_id"], name: "index_talents_on_prefecture_id"
+    t.index ["remember_me_token"], name: "index_talents_on_remember_me_token"
+    t.index ["reset_password_token"], name: "index_talents_on_reset_password_token"
     t.index ["visa_id"], name: "index_talents_on_visa_id"
   end
 
