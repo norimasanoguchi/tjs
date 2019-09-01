@@ -16,7 +16,7 @@ class Talent < ApplicationRecord
   enum edu_level: { 中卒: 0, 高卒: 1, 大卒（学士）:2, 院卒（修士）:3, 院卒（博士）:4 }
   enum japanese_level: { N1: 0, N2: 1, N3: 2, N4: 3,N5: 4,JFTスコア200以上:5,資格なし:6 }
 
-  belongs_to :visa
-  belongs_to :country
-  belongs_to :prefecture
+  # belongs_to :visa #has_oneかも？
+  # belongs_to :country
+  # belongs_to :prefecture
 end
