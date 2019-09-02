@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'talent_sessions/new'
-  get 'talent_sessions/create'
-  get 'talent_sessions/destroy'
   root to: "talents/top#index"
+
+  namespace :talents do
+    resources :sessions, only: [:new, :create, :destroy]
+  end
 
   resources :talents
   get 'top', action: :index, controller: 'talents/top'
