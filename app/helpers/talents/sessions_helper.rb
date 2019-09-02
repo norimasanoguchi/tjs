@@ -1,0 +1,2 @@
+module Talents::SessionsHelper
+end
