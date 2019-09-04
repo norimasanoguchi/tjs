@@ -1,12 +1,12 @@
-class Talents::SessionsController < ApplicationController
+class Companies::SessionsController < ApplicationController
   def new
-    @talent = Talent.new
+    @company = Company.new
   end
 
   def create
-    @talent = login(params[:email],params[:password])
+    @company = login(params[:email],params[:password])
 
-    if @talent
+    if @company
       redirect_back_or_to(root_path, notice: 'Login successful')
     else
       flash.now[:alert] = 'Login failed'
