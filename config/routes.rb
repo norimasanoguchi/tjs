@@ -4,8 +4,12 @@ Rails.application.routes.draw do
   namespace :talents do
     resources :sessions, only: [:new, :create, :destroy]
   end
-
   resources :talents
   get 'top', action: :index, controller: 'talents/top'
+
+  namespace :company do
+    resources :sessions, only: [:new, :create, :destroy]
+  end
+  resources :company
 
 end
