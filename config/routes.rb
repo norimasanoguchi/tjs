@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   resources :talents
   get 'top', action: :index, controller: 'talents/top'
 
-  namespace :company do
+  namespace :companies do
     resources :sessions, only: [:new, :create, :destroy]
   end
-  resources :company
+  resources :companies
 
 end

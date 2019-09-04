@@ -8,7 +8,7 @@ class CompaniesController < ApplicationController
   end
 
   def create
-    @company = TCompany.new(talent_params)
+    @company = Company.new(company_params)
 
     if  @company.save
       logger.debug @company.errors.inspect
@@ -20,7 +20,7 @@ class CompaniesController < ApplicationController
   end
 
   private
-  def talent_params
-    params.require(:company).permit(:name, :contact_person, :tel, :admin, :password, :password_confirmation)
+  def company_params
+    params.require(:company).permit(:name, :email, :contact_person, :tel, :admin, :password, :password_confirmation)
   end
 end

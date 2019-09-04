@@ -1,0 +1,10 @@
+<h1>Welcome to Tokyo Baito Research</h1>
+
+<% if logged_in? %>
+  <%= current_user.name %><br>
+  <%= current_user.id %><br>
+  <%= link_to( "Log out",talents_session_path(id: current_user.id),method: :delete ) %>
+<% else %>
+  <%= link_to( "Sign in",new_talent_path ) %><br>
+  <%= link_to( "Log in",new_talents_session_path ) %><br>
+<% end %>
